@@ -13,29 +13,30 @@ This document provides a detailed overview of the technical architecture for the
 
 SpeakSphere follows a **distributed, service-oriented architecture**. It consists of a client-side web application, a backend API gateway, and several specialized backend services. This approach allows for a clear separation of concerns and enables polyglot development (e.g., using both Python for AI and Node.js for real-time communication if needed).
 
-```
+```mermaid
+graph TD
+    subgraph "User Interfaces"
+        Clients("Clients (Web, Mobile)")
+    end
 
-┌──────────────────┐   ┌──────────────────┐   ┌─────────────────────┐
-│   Web Browser    │   │  Mobile Client   │   │ Third-Party Systems │
-└──────────────────┘   └──────────────────┘   └─────────────────────┘
-         │                    │                        │
-         └───────────┬────────┴───────────┬────────────┘
-                     │ HTTPS (REST/GraphQL) │
-            ┌────────▼────────┐           │
-            │   API Gateway   │           │
-            └────────┬────────┘           │
-                     │                    │
-     ┌───────────────┼────────────────────┘
-     │               │
-┌────▼───┐      ┌────▼───┐      ┌────▼───┐      ┌─────────▼─────────┐
-│  Auth  │      │  Chat  │      │ Appt.  │      │    Inventory      │
-│ Service│      │ Service│      │ Service│      │     Service       │
-└────┬───┘      └────┬───┘      └────┬───┘      └─────────┬─────────┘
-     │               │               │                    │
-┌────▼───┐      ┌────▼───┐      ┌────▼───┐      ┌─────────▼─────────┐
-│ User DB│      │ Mongo DB│      │Calendar│      │   PostgreSQL DB   │
-│(Postgres)│    │(Conversations)│ │  API   │      │    (Inventory)    │
-└────────┘      └────────┘      └────────┘      └───────────────────┘
+    subgraph "Backend Services"
+        API_Gateway("API Gateway")
+        Speech_Service("Speech Service (STT/TTS)")
+        Chat_Service("Chat Service (NLP)")
+        Telephony_Service("Telephony Service")
+    end
+
+    subgraph "External Systems"
+        CCaaS("CCaaS Platform (e.g., Twilio)")
+        Human_Agents("Human Agents")
+    end
+
+    Clients -- "WebSocket (Audio)" --> Speech_Service
+    Speech_Service -- "Text" --> Chat_Service
+    Chat_Service -- "Handoff Command" --> Telephony_Service
+    Telephony_Service -- "Initiate Transfer" --> CCaaS
+    CCaaS -- "Connects Call" --> Human_Agents
+    Clients -- "HTTP (REST)" --> API_Gateway
 ```
 
 ## 3. Component Breakdown
@@ -101,5 +102,6 @@ The backend is composed of several microservices, each with a distinct responsib
 ## 4. Data Privacy & Security
 
 - **Authentication**: User authentication for the inventory dashboard will be handled by a dedicated Auth service using JWTs (JSON Web Tokens).
+- **Authentication**: User authentication for the internal dashboard will be handled by a dedicated service that issues JWTs (JSON Web Tokens). The API Gateway is responsible for validating these tokens on incoming requests.
 - **Encryption**: All data will be encrypted in transit using TLS 1.2+ and at rest using database-level encryption (e.g., TDE for PostgreSQL, Encrypted Storage Engine for MongoDB).
 - **Compliance**: For HIPAA compliance, all access to Protected Health Information (PHI) will be strictly controlled via Attribute-Based Access Control (ABAC) and logged for auditing. All third-party services handling PHI will require a Business Associate Agreement (BAA).

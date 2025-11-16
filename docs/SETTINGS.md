@@ -23,10 +23,12 @@ These settings are essential for connecting SpeakSphere to external services. AP
 
 - `GOOGLE_CALENDAR_API_KEY`: Required for the Appointment Scheduling service to interact with Google Calendar.
 - `SENDGRID_API_KEY`: Required for sending email notifications (e.g., appointment reminders).
-- `TWILIO_ACCOUNT_SID` & `TWILIO_AUTH_TOKEN`: Required for sending SMS notifications.
+- `TWILIO_ACCOUNT_SID` & `TWILIO_AUTH_TOKEN`: Required for sending SMS notifications and handling voice calls.
 - `GOOGLE_SPEECH_API_KEY`: API key for using Google Cloud Speech-to-Text.
 - `AMAZON_POLLY_ACCESS_KEY_ID`: AWS access key for using Amazon Polly for Text-to-Speech.
 - `AMAZON_POLLY_SECRET_ACCESS_KEY`: AWS secret key for using Amazon Polly.
+- `TWILIO_PHONE_NUMBER`: The Twilio phone number used for making and receiving calls.
+- `TWILIO_APP_SID`: The TwiML Application SID used to configure voice URLs for call handling.
 
 ## 4. Inventory Management Settings
 

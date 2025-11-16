@@ -10,6 +10,7 @@ This document contains a prioritized list of user stories and tasks for the deve
 - **E04**: Multilingual Support
 - **E05**: System Architecture & Infrastructure
 - **E06**: Voice Inquiries
+- **E07**: Live Agent Escalation
 
 ---
 
@@ -41,5 +42,7 @@ This document contains a prioritized list of user stories and tasks for the deve
 - **(E06)** As a user, I want to click a microphone button to start speaking my question to the chatbot.
 - **(E06)** As a developer, I need to integrate a Speech-to-Text (STT) service to convert user audio into text.
 - **(E06)** As a developer, I need to integrate a Text-to-Speech (TTS) service to convert the chatbot's text response into audio.
+- **(E07)** As a user, I want to say "talk to an agent" to be transferred to a real person.
+- **(E07)** As a developer, I need to integrate with a CCaaS platform to manage call queues and agent status.
 
 ---

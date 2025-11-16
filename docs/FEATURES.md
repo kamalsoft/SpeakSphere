@@ -44,3 +44,4 @@ This phase focuses on achieving feature parity and preparing for more advanced u
 This phase will introduce new ways for users to interact with the platform.
 
 - **Voice Inquiries**: Users will be able to speak to the chatbot for a hands-free experience, which includes integrating Speech-to-Text (STT) and Text-to-Speech (TTS) services.
+- **Live Agent Escalation**: The voice service will support transferring the user to a human agent upon request or when the AI cannot handle a query.

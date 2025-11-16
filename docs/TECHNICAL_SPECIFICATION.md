@@ -114,3 +114,30 @@ sequenceDiagram
     Speech Service-->>Client: Streams audio response
     deactivate Speech Service
 ```
+
+### 3.2. Live Agent Handoff Flow
+
+This diagram shows the process of escalating a call from the AI to a human agent.
+
+```mermaid
+sequenceDiagram
+    participant User
+    participant Speech Service
+    participant Chat Service
+    participant Telephony Service
+    participant CCaaS Platform
+    participant Human Agent
+
+    User->>Speech Service: "I need to speak to a person."
+    Speech Service->>Chat Service: POST /chat with text "I need to speak to a person."
+    activate Chat Service
+    Chat Service->>Chat Service: Recognizes 'request_human_agent' intent
+    Chat Service->>Telephony Service: POST /handoff {conversation_id: "..."}
+    deactivate Chat Service
+    activate Telephony Service
+    Telephony Service->>CCaaS Platform: Initiate call transfer to 'support_queue'
+    deactivate Telephony Service
+    CCaaS Platform->>Human Agent: Incoming call notification
+    Human Agent->>CCaaS Platform: Accepts call
+    CCaaS Platform->>User: Connects user audio stream to human agent
+```

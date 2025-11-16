@@ -46,5 +46,7 @@ This document outlines the planned development phases for the SpeakSphere proof-
 - **Key Deliverables**:
   - `[Epic]` Implement **Voice Inquiry** support, allowing users to interact with the chatbot via speech.
   - `[Tech]` Integrate Speech-to-Text (STT) and Text-to-Speech (TTS) services.
+  - `[Epic]` Implement **Live Agent Escalation**, allowing voice sessions to be transferred to a human agent.
+  - `[Tech]` Integrate with a CCaaS (Contact Center as a Service) platform like Twilio Flex for call routing.
 
 ---

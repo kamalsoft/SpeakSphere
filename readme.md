@@ -5,6 +5,7 @@ Welcome to **SpeakSphere**! This is a proof-of-concept application designed to f
 ## ✨ Features
 
 - **Customer Inquiries**: An AI-powered chatbot to handle user questions 24/7.
+- **Live Agent Escalation**: Seamlessly transfer users from the AI to a human agent during a voice call.
 - **Appointment Scheduling**: Seamless integration with calendar services to book, reschedule, or cancel appointments.
 - **Inventory Management**: A secure dashboard for internal users to track and manage stock levels.
 - **Multilingual Support**: Natively supports English, Tamil, Hindi, Spanish, and French.

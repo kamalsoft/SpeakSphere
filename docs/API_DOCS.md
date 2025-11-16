@@ -75,7 +75,32 @@ This is the primary endpoint for communicating with the chatbot. It accepts a us
 
 ---
 
-### 2. Submit Feedback
+### 2. Initiate Agent Handoff
+
+- **Endpoint**: `POST /handoff`
+- **Description**: (Internal Service-to-Service) Initiates a transfer of a live voice call from the AI to a human agent queue. This is typically called by the Chat Service when it detects a handoff intent.
+
+#### Request Body
+
+```json
+{
+  "conversation_id": "conv_12345abcde",
+  "target_queue": "support"
+}
+```
+
+| Field             | Type   | Required | Description                                                                                |
+| ----------------- | ------ | -------- | ------------------------------------------------------------------------------------------ |
+| `conversation_id` | string | Yes      | The ID of the active conversation to be transferred.                                       |
+| `target_queue`    | string | No       | The specific agent queue to transfer to (e.g., 'sales', 'support'). Defaults to 'general'. |
+
+#### Success Response (202 Accepted)
+
+The server accepts the request and has initiated the handoff process asynchronously.
+
+---
+
+### 3. Submit Feedback
 
 - **Endpoint**: `POST /feedback`
 - **Description**: Submits user feedback on a specific chatbot message.
