@@ -63,6 +63,4 @@ documentation_files:
   - docs/TECHNICAL_SPECIFICATION.md
   - docs/API_DOCS.md
   - docs/CONTRIBUTING.md
-  - docs/FEATURES.md
   - docs/ROADMAP.md
-  - DATABASE_SCHEMA.json

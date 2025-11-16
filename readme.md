@@ -69,7 +69,7 @@ Welcome to **SpeakSphere**! This is a proof-of-concept application designed to f
 
 ## 🔐 Data Privacy & Compliance
 
-This application is designed with data privacy at its core, adhering to **GDPR**, **CCPA**, and **HIPAA** regulations. All sensitive data is encrypted in transit and at rest.
+This application is designed with data privacy at its core, with goals to adhere to regulations like **GDPR**, **CCPA**, and **HIPAA**. All sensitive data is encrypted in transit and at rest.
 
 ## 🤝 Contributing
 
