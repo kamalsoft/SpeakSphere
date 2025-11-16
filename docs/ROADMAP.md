@@ -39,3 +39,12 @@ This document outlines the planned development phases for the SpeakSphere proof-
   - `[Feature]` Implement the user feedback mechanism for the chatbot and a pipeline to use it for model improvement.
 
 ---
+
+### Phase 4: Next-Generation Interaction (Future)
+
+- **Objective**: Introduce new modalities of interaction and enhance AI capabilities.
+- **Key Deliverables**:
+  - `[Epic]` Implement **Voice Inquiry** support, allowing users to interact with the chatbot via speech.
+  - `[Tech]` Integrate Speech-to-Text (STT) and Text-to-Speech (TTS) services.
+
+---

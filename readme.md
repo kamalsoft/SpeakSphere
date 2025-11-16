@@ -5,6 +5,7 @@ Welcome to **SpeakSphere**! This is a proof-of-concept application designed to f
 ## ✨ Features
 
 - **Customer Inquiries**: An AI-powered chatbot to handle user questions 24/7.
+- **Voice Inquiries**: AI-powered voice interaction for hands-free support.
 - **Appointment Scheduling**: Seamless integration with calendar services to book, reschedule, or cancel appointments.
 - **Inventory Management**: A secure dashboard for internal users to track and manage stock levels.
 - **Multilingual Support**: Natively supports English, Tamil, Hindi, Spanish, and French.
@@ -12,60 +13,14 @@ Welcome to **SpeakSphere**! This is a proof-of-concept application designed to f
 ## 🛠️ Tech Stack
 
 - **Frontend**: React, Vue.js, Chakra-UI
-- **Backend**: Node.js (Express) / Python (Django)
+- **Backend**: Python (Django), Node.js (Express)
 - **AI/NLP**: spaCy, Hugging Face Transformers
 - **Database**: MongoDB (for conversations), PostgreSQL (for inventory)
-- **APIs**: Google Calendar API, Twilio, SendGrid
+- **Third-Party APIs**: Google Calendar API, Twilio, SendGrid
 
 ## 🚀 Getting Started
 
-### Prerequisites
-
-- Node.js v18.x or later
-- Python 3.10 or later
-- Access to a MongoDB and PostgreSQL database
-
-### Installation
-
-1.  Clone the repository:
-
-    ```sh
-    git clone https://github.com/your-username/speaksphere.git
-    cd speaksphere
-    ```
-
-2.  Install backend dependencies:
-
-    ```sh
-    # Navigate to the server directory
-    cd server
-    pip install -r requirements.txt
-    ```
-
-3.  Install frontend dependencies:
-
-    ```sh
-    # Navigate to the client directory
-    cd ../client
-    npm install
-    ```
-
-4.  Set up your environment variables by creating a `.env` file in the `server` directory. See `.env.example` for required variables.
-
-### Running the Application
-
-1.  Start the backend server:
-
-    ```sh
-    # From the server directory
-    python manage.py runserver
-    ```
-
-2.  Start the frontend development server:
-    ```sh
-    # From the client directory
-    npm run dev
-    ```
+For detailed instructions on how to set up your development environment and run the application, please see the Onboarding Guide for New Developers.
 
 ## 🔐 Data Privacy & Compliance
 

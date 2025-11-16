@@ -24,6 +24,16 @@ This project and everyone participating in it is governed by a [Code of Conduct]
 
 ## Coding Style
 
+### Documenting API Changes
+
+If your contribution adds or modifies an API endpoint, you must update the `docs/API_DOCS.md` file. The documentation for each endpoint should include:
+
+- The HTTP method and endpoint path (e.g., `POST /chat`).
+- A clear description of the endpoint's purpose.
+- A detailed breakdown of the request body, including fields, types, and whether they are required.
+- Examples of success and error responses.
+- A list of possible non-200 status codes and their meanings.
+
 ### Python (Backend)
 
 - We follow the **PEP 8** style guide.

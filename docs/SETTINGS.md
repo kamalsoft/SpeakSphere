@@ -13,9 +13,9 @@ Feature flags allow for toggling major components of the application on or off w
 
 ## 2. Language Support
 
-The application is designed to be multilingual. The list of supported languages can be configured.
+The application is designed to be multilingual. The list of supported languages is defined in the `.gitmcp.yml` file and serves as the single source of truth.
 
-- `SUPPORTED_LANGUAGES`: (Default: `en,es,hi,ta,fr`) A comma-separated list of language codes (ISO 639-1) that the chatbot will support.
+- `SUPPORTED_LANGUAGES`: A list of language codes (ISO 639-1) that the chatbot will support.
 
 ## 3. Third-Party Integrations (API Keys)
 
@@ -24,6 +24,9 @@ These settings are essential for connecting SpeakSphere to external services. AP
 - `GOOGLE_CALENDAR_API_KEY`: Required for the Appointment Scheduling service to interact with Google Calendar.
 - `SENDGRID_API_KEY`: Required for sending email notifications (e.g., appointment reminders).
 - `TWILIO_ACCOUNT_SID` & `TWILIO_AUTH_TOKEN`: Required for sending SMS notifications.
+- `GOOGLE_SPEECH_API_KEY`: API key for using Google Cloud Speech-to-Text.
+- `AMAZON_POLLY_ACCESS_KEY_ID`: AWS access key for using Amazon Polly for Text-to-Speech.
+- `AMAZON_POLLY_SECRET_ACCESS_KEY`: AWS secret key for using Amazon Polly.
 
 ## 4. Inventory Management Settings
 

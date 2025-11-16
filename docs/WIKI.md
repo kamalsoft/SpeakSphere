@@ -20,5 +20,6 @@ Welcome to the central wiki for the SpeakSphere project. This page serves as a t
 ## Community & Contribution
 
 - [Contribution Guidelines](./CONTRIBUTING.md): How to contribute to the project, including coding style and pull request process.
+- [Onboarding Guide](./ONBOARDING.md): A guide for new developers to get their environment set up.
 - [Frequently Asked Questions (FAQs)](./FAQS.md): Common questions about the project.
 - [Changelog](./CHANGELOG.md): A log of all notable changes to the project.

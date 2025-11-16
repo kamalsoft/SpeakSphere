@@ -74,3 +74,66 @@ This is the primary endpoint for communicating with the chatbot. It accepts a us
 - `500 Internal Server Error`: An unexpected error occurred on the server (e.g., NLP model failure).
 
 ---
+
+### 2. Submit Feedback
+
+- **Endpoint**: `POST /feedback`
+- **Description**: Submits user feedback on a specific chatbot message.
+
+#### Request Body
+
+```json
+{
+  "conversation_id": "conv_12345abcde",
+  "message_id": "msg_67890fghij",
+  "rating": 5,
+  "comment": "This was very helpful!"
+}
+```
+
+| Field             | Type    | Required | Description                                                              |
+| ----------------- | ------- | -------- | ------------------------------------------------------------------------ |
+| `conversation_id` | string  | Yes      | The ID of the conversation containing the message being rated.           |
+| `message_id`      | string  | Yes      | The unique identifier for the specific bot message that was rated.       |
+| `rating`          | integer | Yes      | The rating given by the user (e.g., 1 for thumbs down, 5 for thumbs up). |
+| `comment`         | string  | No       | An optional free-text comment from the user.                             |
+
+#### Success Response (201 Created)
+
+```json
+{
+  "status": "success",
+  "message": "Feedback submitted successfully."
+}
+```
+
+#### Error Responses
+
+- `400 Bad Request`: The request body is missing required fields or is improperly formatted.
+
+## WebSocket Endpoints
+
+For real-time, bidirectional communication like voice inquiries, the API provides a WebSocket endpoint.
+
+### 1. Voice Inquiry Stream
+
+- **Endpoint**: `WS /voice`
+- **Description**: Establishes a persistent connection for streaming audio from the client to the server and receiving audio responses back.
+
+#### Communication Flow
+
+1.  **Client Connects**: The client establishes a WebSocket connection to the `/voice` endpoint.
+2.  **Client Sends Audio**: The client streams raw audio data (e.g., PCM audio chunks) in binary frames.
+3.  **Server Responds**: The server can send back multiple message types:
+    - **Interim Transcript**: (Optional) A preliminary text transcript of the user's speech as it is being processed.
+      ```json
+      { "type": "interim_transcript", "text": "Hello what are your..." }
+      ```
+    - **Final Transcript**: The final, corrected text transcript after the user has finished speaking.
+      ```json
+      {
+        "type": "final_transcript",
+        "text": "Hello, what are your store hours?"
+      }
+      ```
+    - **Audio Response**: A binary frame containing the audio data (e.g., MP3 or WAV) of the chatbot's spoken response. The client is responsible for playing this audio.

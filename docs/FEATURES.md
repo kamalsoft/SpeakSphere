@@ -36,3 +36,11 @@ This phase focuses on achieving feature parity and preparing for more advanced u
 - **Chatbot Feedback Loop**: Users will be able to rate chatbot responses, providing data for future model improvements.
 - **Full Language Support**: The remaining target languages, **Tamil** and **French**, will be added.
 - **HIPAA Compliance Hardening**: The system will undergo hardening to meet security and privacy standards for potential healthcare applications.
+
+---
+
+### Phase 4: Next-Generation Interaction
+
+This phase will introduce new ways for users to interact with the platform.
+
+- **Voice Inquiries**: Users will be able to speak to the chatbot for a hands-free experience, which includes integrating Speech-to-Text (STT) and Text-to-Speech (TTS) services.

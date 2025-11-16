@@ -1,8 +1,25 @@
 # .gitmcp.yml - Configuration for SpeakSphere Project
-# Defines build processes and deployment environments.
+# Single source of truth for project metadata, build processes, and deployment environments.
 
 project_name: SpeakSphere
 version: 1.0.0-poc
+description: 'AI-powered customer interaction and management platform.'
+author: 'Your Name <your.email@example.com>'
+license: 'MIT'
+
+repository:
+  type: git
+  url: 'https://github.com/kamalsoft/SpeakSphere.git'
+
+compliance:
+  standards:
+    - GDPR
+    - CCPA
+    - HIPAA
+  data_encryption: true
+  audit_logging: enabled
+
+supported_languages: ['en', 'ta', 'hi', 'es', 'fr']
 
 # Pipeline configuration for Continuous Integration
 pipeline:
@@ -64,3 +81,9 @@ documentation_files:
   - docs/API_DOCS.md
   - docs/CONTRIBUTING.md
   - docs/ROADMAP.md
+  - docs/PROJECT_STRUCTURE.md
+  - docs/FEATURES.md
+  - docs/SETTINGS.md
+  - docs/BACKLOG.md
+  - docs/CODE_OF_CONDUCT.md
+  - docs/PRODUCT_OVERVIEW.md

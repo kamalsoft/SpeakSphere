@@ -14,6 +14,7 @@ This document provides a detailed overview of the technical architecture for the
 SpeakSphere follows a **distributed, service-oriented architecture**. It consists of a client-side web application, a backend API gateway, and several specialized backend services. This approach allows for a clear separation of concerns and enables polyglot development (e.g., using both Python for AI and Node.js for real-time communication if needed).
 
 ```
+
 ┌──────────────────┐   ┌──────────────────┐   ┌─────────────────────┐
 │   Web Browser    │   │  Mobile Client   │   │ Third-Party Systems │
 └──────────────────┘   └──────────────────┘   └─────────────────────┘
@@ -69,9 +70,15 @@ The backend is composed of several microservices, each with a distinct responsib
   - Supports multilingual input by integrating with translation services.
   - Stores and retrieves conversation history from **MongoDB**.
 
+#### c. Speech Service
+
+- **Technology**: Python, integrating with third-party STT/TTS engines (e.g., Google Speech-to-Text, Amazon Polly).
+- **Responsibilities**:
+  - Transcribing audio streams from the client into text to be sent to the Chat Service.
+  - Converting text responses from the Chat Service into audio streams to be sent back to the client.
+
 #### c. Appointment Service
 
-- **Technology**: Python or Node.js.
 - **Responsibilities**:
   - Handles all logic related to scheduling, rescheduling, and canceling appointments.
   - Integrates with third-party calendar providers via their APIs (**Google Calendar API**).

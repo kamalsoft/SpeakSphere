@@ -9,6 +9,7 @@ This document contains a prioritized list of user stories and tasks for the deve
 - **E03**: Inventory Management
 - **E04**: Multilingual Support
 - **E05**: System Architecture & Infrastructure
+- **E06**: Voice Inquiries
 
 ---
 
@@ -37,5 +38,8 @@ This document contains a prioritized list of user stories and tasks for the deve
 - **(E01)** As a user, I want to be able to rate the chatbot's answer so the system can get smarter.
 - **(E04)** As a developer, I want to add support for Hindi, Tamil, and French to the chat service.
 - **(E03)** As an inventory manager, I want to receive an email alert when a product's stock level drops below 10 units.
+- **(E06)** As a user, I want to click a microphone button to start speaking my question to the chatbot.
+- **(E06)** As a developer, I need to integrate a Speech-to-Text (STT) service to convert user audio into text.
+- **(E06)** As a developer, I need to integrate a Text-to-Speech (TTS) service to convert the chatbot's text response into audio.
 
 ---
