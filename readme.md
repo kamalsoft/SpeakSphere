@@ -5,7 +5,6 @@ Welcome to **SpeakSphere**! This is a proof-of-concept application designed to f
 ## ✨ Features
 
 - **Customer Inquiries**: An AI-powered chatbot to handle user questions 24/7.
-- **Voice Inquiries**: AI-powered voice interaction for hands-free support.
 - **Appointment Scheduling**: Seamless integration with calendar services to book, reschedule, or cancel appointments.
 - **Inventory Management**: A secure dashboard for internal users to track and manage stock levels.
 - **Multilingual Support**: Natively supports English, Tamil, Hindi, Spanish, and French.
@@ -13,10 +12,10 @@ Welcome to **SpeakSphere**! This is a proof-of-concept application designed to f
 ## 🛠️ Tech Stack
 
 - **Frontend**: React, Vue.js, Chakra-UI
-- **Backend**: Python (Django), Node.js (Express)
+- **Backend**: Node.js (Express) / Python (Django)
 - **AI/NLP**: spaCy, Hugging Face Transformers
 - **Database**: MongoDB (for conversations), PostgreSQL (for inventory)
-- **Third-Party APIs**: Google Calendar API, Twilio, SendGrid
+- **APIs**: Google Calendar API, Twilio, SendGrid
 
 ## 🚀 Getting Started
 

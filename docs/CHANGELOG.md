@@ -9,9 +9,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Initial project structure and documentation.
-- `CONTRIBUTING.md` for developer guidelines.
-- `CHANGELOG.md` to track project versions.
+- **Appointment Scheduling**: Core service for booking appointments via the chatbot.
+- **Google Calendar Integration**: Integration with Google Calendar API for checking availability.
+- **Multilingual Support**: Expanded chat service to include support for Spanish and Hindi.
+- **Inventory Dashboard (Read-Only)**: Initial version of the internal dashboard to view stock levels.
+- **User Authentication**: Added roles and permissions for dashboard access.
 
 ## [1.0.0-poc] - YYYY-MM-DD
 
