@@ -1,0 +1,68 @@
+# .gitmcp.yml - Configuration for SpeakSphere Project
+# Defines build processes and deployment environments.
+
+project_name: SpeakSphere
+version: 1.0.0-poc
+
+# Pipeline configuration for Continuous Integration
+pipeline:
+  - name: Build
+    steps:
+      - run: echo "Starting build process..."
+      - run: npm install --prefix client
+      - run: npm run build --prefix client
+      - run: pip install -r server/requirements.txt
+
+  - name: Test
+    steps:
+      - name: Run Frontend Tests
+        command: npm test --prefix client
+      - name: Run Backend Tests
+        command: python server/manage.py test
+
+# Deployment targets and configurations
+deployment:
+  staging:
+    name: Staging Environment
+    url: https://staging.speaksphere.app
+    branch: develop
+    strategy: blue-green
+    notifications:
+      - channel: '#dev-alerts'
+        on_success: true
+        on_failure: true
+
+  production:
+    name: Production Environment
+    url: https://speaksphere.app
+    branch: main
+    strategy: canary
+    requires_approval: true
+    notifications:
+      - channel: '#ops-alerts'
+        on_success: true
+        on_failure: true
+
+# Feature flags for enabling/disabling application modules
+feature_flags:
+  enable_customer_inquiries: true
+  enable_appointment_scheduling: true
+  enable_inventory_management: true
+  enable_hipaa_compliance_mode: false
+
+# Other configurable parameters for deployment environments
+configurable_parameters:
+  inventory_low_stock_threshold: 10
+
+# List of primary documentation files for tracking and validation
+documentation_files:
+  - README.md
+  - docs/WIKI.md
+  - docs/FAQS.md
+  - docs/ARCHITECTURE.md
+  - docs/TECHNICAL_SPECIFICATION.md
+  - docs/API_DOCS.md
+  - docs/CONTRIBUTING.md
+  - docs/FEATURES.md
+  - docs/ROADMAP.md
+  - DATABASE_SCHEMA.json
